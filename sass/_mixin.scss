@@ -1,0 +1,44 @@
+@import "_basic";
+
+/* font size 16px */
+@mixin fs-16 {
+  font-size: #{"clamp(1.4rem, 1.36rem + 0.2vw, 1.6rem)"};
+}
+
+/* font size 22px */
+@mixin fs-22 {
+  font-size: #{"clamp(2rem, 1.96rem + 0.2vw, 2.2rem)"};
+}
+
+/* font size 24px */
+@mixin fs-24 {
+  font-size: #{"clamp(2.2rem, 2.16rem + 0.2vw, 2.4rem)"};
+}
+
+/* basic heading */
+@mixin basic-heading {
+  font-size: #{"clamp(2.4rem, 2.36rem + 0.2vw, 2.6rem)"};
+  font-weight: bold;
+  text-align: center;
+  @content;
+}
+
+/* basic link button */
+@mixin basic-link-btn {
+  background-color: #25aedc;
+  color: #fff;
+  font-size: #{"clamp(1.8rem, 1.76rem + 0.2vw, 2rem)"};
+  font-weight: bold;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 10px;
+  @content;
+}
+
+/* media query */
+@mixin mq($breakpoint) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
